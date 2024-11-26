@@ -1,0 +1,92 @@
+/* General Style */
+
+body {
+    font-family: "Helvatica Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+}
+
+.calculator {
+    width: 300px;
+    background: #000;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Display Styles */
+.calculator_display {
+    color: #fff;
+    background-color: #333;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 80px;
+    line-height: 40px;
+    border-bottom: 1px solid #444;
+}
+
+/* Keys Grid Layout */
+.calculator_keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+    background-color: #000;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+.calculator_keys button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    color: white;
+    background-color: #444;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.calculator_keys button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Number keys */
+.calculator_keys button:not([data-action]) {
+    background: #333;
+    color: #fff;
+}
+
+/* Operator Keys */
+.calculator_keys .key-operator {
+    background: #f69906;
+    color: #fff;
+}
+
+/* Equal Key */
+.calculator_keys .key--equal {
+    background: #ff9500;
+    color: #fff;
+    grid-column: span 2;
+}
+
+/* Clear Key */
+.calculator_keys button[data-action="clear"] {
+    background: #d4d4d2;
+    color: #000;
+}
+
+/* Decimal Key */
+.calculator_keys button[data-action="decimal"] {
+    background: #333;
+    color: #fff;
+}
